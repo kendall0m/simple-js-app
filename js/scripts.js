@@ -1,4 +1,4 @@
+alert('Hello world');
 
-let size = 100;
-let doubleSize = size * 2;
-document.write(doubleSize);
+let favoriteFood = 'spaghetti';
+document.write(favoriteFood);
