@@ -7,9 +7,9 @@ let pokemonList = [
 console.log(pokemonList);
 
 let text = '';
-let i = 0;
 
-for (;pokemonList[i];){
+
+for (let i = 0; i<pokemonList.length; i++){
     if (pokemonList[i].height > 1.5) {
         document.write(text + pokemonList[i].name + ' is ' + pokemonList[i].height + ' - wow, this Pokemon is tall! </br>')
     } 
@@ -17,7 +17,7 @@ for (;pokemonList[i];){
     else
     text = text + pokemonList[i].name + ' is ' + pokemonList[i].height + '<br />';
     //if the pokemon is not over 1.5 tall, no message will appear
-    i++;  
+  
 
     
 }
