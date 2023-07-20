@@ -1,26 +1,49 @@
-let pokemonList = [
-    {name: 'Charizard', type: ['fire', 'flying'], height: '1.7'},
-    {name: 'Gengar', type: ['ghost', 'poison'], height: '1.5'},
-    {name: 'Clefable', type: 'fairy', height: '1.3'},
-];
+let pokemonRepository = (function () {
 
-console.log(pokemonList);
+    let pokemonList = [
+        {name: 'Dragonair', type: 'dragon', height: '4', isTall: true },
+        {name: 'Dragonite', type: ['dragon', 'flying'], height: '2.2', isTall: true},
+        {name: 'Charizard', type: ['fire', 'flying'], height: '1.7', isTall: true},
+        {name: 'Gengar', type: ['ghost', 'poison'], height: '1.5', isTall: false},
+        {name: 'Clefable', type: 'fairy', height: '1.3', isTall: false},
+    ]
 
-let text = '';
+    function getAll () {
+        return pokemonList;
+    };
+
+    function add (pokemon) {
+        pokemonList.push(pokemon);
+    };
+
+    return {
+        getAll: getAll,
+        add: add
+    };
+
+})()
 
 
-for (let i = 0; i<pokemonList.length; i++){
-    if (pokemonList[i].height > 1.5) {
-        document.write(text + pokemonList[i].name + ' is ' + pokemonList[i].height + ' - wow, this Pokemon is tall! </br>')
-    } 
-    // if pokemon is over 1.5 tall then the message will appear next to it
-    else
-    text = text + pokemonList[i].name + ' is ' + pokemonList[i].height + '<br />';
-    //if the pokemon is not over 1.5 tall, no message will appear
-  
 
-    
+pokemonRepository.add({ name: 'Pikachu', type: 'electric', height: '0.4', isTall: false}); //adds a pokemon to the list 
+// console.log(pokemonRepository.getAll()); 
+
+Object.keys(pokemonRepository.getAll()).forEach(function(property) {
+    console.log(pokemonRepository.getAll()[property]); // displays properties in console log
+});
+
+function getheightDescription(isTall) {
+    return isTall ? '- This Pokemon is huge!' : '';
+}; // if pokemon is tall, statement will appear
+
+function getPokemonDescription(pokemon) {
+	// let nameDescription = getNameDescription(pokemon.name);
+	let heightDescription = getheightDescription(pokemon.isTall); 
+	
+	return pokemon.name + ' is ' + pokemon.height + 'm tall ' + heightDescription + '</br>';
 }
 
-console.log(text);
-document.write(text);
+pokemonRepository.getAll().forEach(function(pokemon) {
+    document.write(getPokemonDescription(pokemon));
+})
+// calls function and writes returned statement in document
