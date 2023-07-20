@@ -41,9 +41,16 @@ function getPokemonDescription(pokemon) {
 	let heightDescription = getheightDescription(pokemon.isTall); 
 	
 	return pokemon.name + ' is ' + pokemon.height + 'm tall ' + heightDescription + '</br>';
-}
+};
 
 pokemonRepository.getAll().forEach(function(pokemon) {
     document.write(getPokemonDescription(pokemon));
-})
+});
+
+function getPokemonByName(name) {
+const result = pokemonRepository.getAll().filter (pokemon => pokemon.name == name);
+console.log(result);
+};
+
+getPokemonByName("Gengar");
 // calls function and writes returned statement in document
