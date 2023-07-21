@@ -32,20 +32,30 @@ Object.keys(pokemonRepository.getAll()).forEach(function(property) {
     console.log(pokemonRepository.getAll()[property]); // displays properties in console log
 });
 
-function getheightDescription(isTall) {
-    return isTall ? '- This Pokemon is huge!' : '';
-}; // if pokemon is tall, statement will appear
-
-function getPokemonDescription(pokemon) {
-	// let nameDescription = getNameDescription(pokemon.name);
-	let heightDescription = getheightDescription(pokemon.isTall); 
-	
-	return pokemon.name + ' is ' + pokemon.height + 'm tall ' + heightDescription + '</br>';
-};
-
-pokemonRepository.getAll().forEach(function(pokemon) {
-    document.write(getPokemonDescription(pokemon));
+pokemonRepository.getAll().forEach(function(pokemon){
+    if (pokemon.height > 1.5) {
+        document.write(pokemon.name + ' is ' + pokemon.height + ' - wow, this Pokemon is tall! </br>')
+    } 
+    // if pokemon is over 1.5 tall then the message will appear next to it
+    else
+        document.write( pokemon.name + ' is ' + pokemon.height + '<br />');
+    //if the pokemon is not over 1.5 tall, no message will appear
 });
+
+// function getheightDescription(isTall) {
+//     return isTall ? '- This Pokemon is huge!' : '';
+// }; // if pokemon is tall, statement will appear
+
+// function getPokemonDescription(pokemon) {
+// 	// let nameDescription = getNameDescription(pokemon.name);
+// 	let heightDescription = getheightDescription(pokemon.isTall); 
+	
+// 	return pokemon.name + ' is ' + pokemon.height + 'm tall ' + heightDescription + '</br>';
+// };
+
+// pokemonRepository.getAll().forEach(function(pokemon) {
+//     document.write(getPokemonDescription(pokemon));
+// });
 
 function getPokemonByName(name) {
 const result = pokemonRepository.getAll().filter (pokemon => pokemon.name == name);
