@@ -23,14 +23,13 @@ let pokemonRepository = (function () {
 
 })()
 
-
+Object.keys(pokemonRepository.getAll()).forEach(function(property) {
+    console.log(pokemonRepository.getAll()[property]); // displays properties in console log
+});
 
 pokemonRepository.add({ name: 'Pikachu', type: 'electric', height: '0.4', isTall: false}); //adds a pokemon to the list 
 // console.log(pokemonRepository.getAll()); 
 
-Object.keys(pokemonRepository.getAll()).forEach(function(property) {
-    console.log(pokemonRepository.getAll()[property]); // displays properties in console log
-});
 
 pokemonRepository.getAll().forEach(function(pokemon){
     if (pokemon.height > 1.5) {
@@ -42,25 +41,7 @@ pokemonRepository.getAll().forEach(function(pokemon){
     //if the pokemon is not over 1.5 tall, no message will appear
 });
 
-// function getheightDescription(isTall) {
-//     return isTall ? '- This Pokemon is huge!' : '';
-// }; // if pokemon is tall, statement will appear
 
-// function getPokemonDescription(pokemon) {
-// 	// let nameDescription = getNameDescription(pokemon.name);
-// 	let heightDescription = getheightDescription(pokemon.isTall); 
-	
-// 	return pokemon.name + ' is ' + pokemon.height + 'm tall ' + heightDescription + '</br>';
-// };
 
-// pokemonRepository.getAll().forEach(function(pokemon) {
-//     document.write(getPokemonDescription(pokemon));
-// });
 
-function getPokemonByName(name) {
-const result = pokemonRepository.getAll().filter (pokemon => pokemon.name == name);
-console.log(result);
-};
-
-getPokemonByName("Gengar");
 // calls function and writes returned statement in document
