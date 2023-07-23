@@ -21,17 +21,9 @@ let pokemonRepository = (function () {
         add: add
     };
 
-    function getPokemonByName(name) {
-        const result = pokemonRepository.getAll().filter (pokemon => pokemon.name == name);
-        console.log(result);
-    };
 
 })()
 
-
-
-pokemonRepository.add({ name: 'Pikachu', type: 'electric', height: '0.4', isTall: false}); //adds a pokemon to the list 
-// console.log(pokemonRepository.getAll()); 
 
 Object.keys(pokemonRepository.getAll()).forEach(function(property) {
     console.log(pokemonRepository.getAll()[property]); // displays properties in console log
