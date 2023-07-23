@@ -21,15 +21,21 @@ let pokemonRepository = (function () {
         add: add
     };
 
+    function getPokemonByName(name) {
+        const result = pokemonRepository.getAll().filter (pokemon => pokemon.name == name);
+        console.log(result);
+    };
+
 })()
 
-Object.keys(pokemonRepository.getAll()).forEach(function(property) {
-    console.log(pokemonRepository.getAll()[property]); // displays properties in console log
-});
+
 
 pokemonRepository.add({ name: 'Pikachu', type: 'electric', height: '0.4', isTall: false}); //adds a pokemon to the list 
 // console.log(pokemonRepository.getAll()); 
 
+Object.keys(pokemonRepository.getAll()).forEach(function(property) {
+    console.log(pokemonRepository.getAll()[property]); // displays properties in console log
+});
 
 pokemonRepository.getAll().forEach(function(pokemon){
     if (pokemon.height > 1.5) {
@@ -40,8 +46,3 @@ pokemonRepository.getAll().forEach(function(pokemon){
         document.write( pokemon.name + ' is ' + pokemon.height + '<br />');
     //if the pokemon is not over 1.5 tall, no message will appear
 });
-
-
-
-
-// calls function and writes returned statement in document
