@@ -16,25 +16,34 @@ let pokemonRepository = (function () {
         pokemonList.push(pokemon);
     };
 
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector('.pokemon-list');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('pokemon-button');
+        listItem.appendChild(button);
+        pokemonList.appendChild(listItem); 
+        button.addEventListener('click', function(){
+            showDetails(pokemon)
+        });
+    }
+
+    function showDetails(pokemon){
+        console.log (pokemon);
+    }
+
     return {
         getAll: getAll,
-        add: add
+        add: add,
+        addListItem: addListItem
+
     };
 
 
 })()
 
-
-Object.keys(pokemonRepository.getAll()).forEach(function(property) {
-    console.log(pokemonRepository.getAll()[property]); // displays properties in console log
-});
-
 pokemonRepository.getAll().forEach(function(pokemon){
-    if (pokemon.height > 1.5) {
-        document.write(pokemon.name + ' is ' + pokemon.height + ' - wow, this Pokemon is tall! </br>')
-    } 
-    // if pokemon is over 1.5 tall then the message will appear next to it
-    else
-        document.write( pokemon.name + ' is ' + pokemon.height + '<br />');
-    //if the pokemon is not over 1.5 tall, no message will appear
+ pokemonRepository.addListItem(pokemon);   
 });
+

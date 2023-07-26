@@ -6,3 +6,11 @@ body {
     line-height: 1.2;
     color: purple
 }
+
+.pokemon-button {
+    background-color: rgb(191, 176, 206);
+}
+
+ul {
+    list-style-type: none;
+}
