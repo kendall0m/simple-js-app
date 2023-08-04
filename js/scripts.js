@@ -120,6 +120,8 @@ function hideModal () {
   let modalContainer = document.querySelector ('#modal-container');
   modalContainer.classList.remove('is-visible');
 
+  let dialogPromiseReject;
+  
   if (dialogPromiseReject) {
     dialogPromiseReject();
     dialogPromiseReject = null;
