@@ -4,12 +4,22 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
-    color: purple
+    color: purple;
 }
 
-.pokemon-button {
+/* .pokemon-button {
     background-color: rgb(191, 176, 206);
-}
+    border: 5px 5px;
+    border-color: pink;
+    color: rgb(41, 78, 49);
+    padding: 15px 32 px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+} */
+
 
 ul {
     list-style-type: none;
@@ -39,3 +49,35 @@ ul {
     display: grid;
     text-align: center;
   }
+
+.navbar-brand img {
+    width: 200px;
+}
+
+/* .list-group{ */
+    /* background-color: rgb(191, 176, 206);
+    border: 5px 5px;
+    border-color: pink;
+    color: rgb(41, 78, 49);
+    padding: 15px 32 px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; */
+/* } */
+
+.list-group-item {
+    background-color: rgb(218, 193, 197);
+    border: 5px 5px;
+    border-color: pink;
+    color: rgb(41, 78, 49);
+    padding: 15px 32 px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn{
+    background-color: rgb(196, 163, 193);
+}
