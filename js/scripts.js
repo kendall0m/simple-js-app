@@ -49,7 +49,6 @@ let pokemonRepository = (function () {
         item.name = details.name;
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
-
         showModal(item);
       }).catch(function (e) {
         console.error(e);
@@ -86,7 +85,7 @@ let pokemonRepository = (function () {
       imageElement.attr("src", pokemon.imageUrl);
       let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
     
-      modalTitle.append(nameElement);
+      modalHeader.append(nameElement);
       modalBody.append(imageElement);
       modalBody.append(heightElement);
     }
