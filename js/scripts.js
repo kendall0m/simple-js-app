@@ -16,6 +16,7 @@ let pokemonRepository = (function () {
 
       button.innerText = pokemon.name;
 
+
       listItem.appendChild(button);
       pokemonList.appendChild(listItem); 
       button.addEventListener('click', function(){
@@ -84,8 +85,8 @@ let pokemonRepository = (function () {
       let nameElement = $("<h1>" + pokemon.name + "</h1>");
       let imageElement = $('<img class="modal-img" style="width:50%">');
       imageElement.attr("src", pokemon.imageUrl);
-      let heightElement = $("<p>" + "height : " + pokemon.height + "m</p>");
-      let weightElement= $("<p>"+ "weight : " + pokemon.weight  + "kg </p>")
+      var heightElement = $("<p>" + "height : " + pokemon.height / 10 + "m</p>");
+      let weightElement= $("<p>"+ "weight : " + pokemon.weight / 10  + "kg </p>");
     
       modalHeader.append(nameElement);
       modalBody.append(imageElement);
